@@ -6,10 +6,11 @@ import requests
 import json
 import pprint
 
-data = file("../tokens.json")
+
+data = file(os.path.join(sys.path[0], "../tokens.json"))
 tokens = json.load(data)
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 2 or len(sys.argv) != 3:
     print "Usage: podcast_upload.py [audio file name]"
     exit(1)
 
